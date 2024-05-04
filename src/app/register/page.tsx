@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const router = useRouter();
@@ -13,15 +14,28 @@ export default function Register() {
     username: "",
   });
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    try {
+      setLoading(true);
+      const response = await axios.post("/api/users/register", user);
+      console.log("Signup success", response.data);
+      router.push("/login");
+    } catch (error: any) {
+      toast.error(error);
+      console.log("Signup Failed!", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     if (
       user.email.length > 0 &&
-      user.password.legth > 0 &&
+      user.password.length > 0 &&
       user.password.length > 0
     ) {
       setButtonDisabled(false);
@@ -33,7 +47,7 @@ export default function Register() {
   return (
     <div className="register">
       <form className="register-form" onSubmit={handleSubmit}>
-        <h1>Register Form</h1>
+        <h1>{loading ? "Processing" : "SignUp"}</h1>
         <input
           type="text"
           placeholder="Username e.g. johndoe"
