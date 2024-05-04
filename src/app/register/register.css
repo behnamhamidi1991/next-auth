@@ -11,9 +11,17 @@
   align-items: center;
   width: 100%;
   max-width: 400px;
-  background-color: rgb(98, 98, 113);
-  padding: 25px 20px;
+  background-color: rgb(52, 52, 61);
+  padding: 35px 30px;
+  border-radius: 10px;
   gap: 6px;
+}
+
+.register-form h1 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-weight: 300;
 }
 
 .register-form input {
@@ -22,16 +30,31 @@
   padding: 10px 7px;
   border-radius: 3px;
   outline: none;
+  font-size: 12px;
 }
 
-.register-form button {
+.register-form .signupBtn {
   width: 100%;
   padding: 7px;
   border: none;
   border-radius: 3px;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
+  background-color: steelblue;
+  color: white;
+}
+
+.register-form .disabled {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: default;
+  background-color: rgb(172, 172, 172);
+  color: white;
 }

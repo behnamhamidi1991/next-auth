@@ -1,20 +1,34 @@
 "use client";
 import "./register.css";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
 export default function Register() {
+  const router = useRouter();
   const [user, setUser] = React.useState({
     email: "",
     password: "",
     username: "",
   });
+  const [buttonDisabled, setButtonDisabled] = React.useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    if (
+      user.email.length > 0 &&
+      user.password.legth > 0 &&
+      user.password.length > 0
+    ) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [user]);
 
   return (
     <div className="register">
@@ -41,7 +55,12 @@ export default function Register() {
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
-        <button type="submit">Register</button>
+        <button
+          type="submit"
+          className={buttonDisabled ? "disabled" : "signupBtn"}
+        >
+          SignUp
+        </button>
       </form>
     </div>
   );
