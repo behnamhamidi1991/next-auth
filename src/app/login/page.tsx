@@ -11,6 +11,9 @@ export default function LoginPage() {
     password: "",
   });
 
+  const [buttonDisabled, setButtonDisabled] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+
   return (
     <div className="login">
       <form className="login-form">
