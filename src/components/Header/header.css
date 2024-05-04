@@ -1,0 +1,15 @@
+header ul {
+  display: flex;
+  height: 50px;
+  background-color: rgb(31, 28, 53);
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.link-item {
+  color: #fff;
+}

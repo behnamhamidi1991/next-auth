@@ -1,18 +1,30 @@
 import Link from "next/link";
 import React from "react";
+import "./header.css";
 
 const Header = () => {
   return (
     <header>
       <ul>
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/" className="link-item">
+            Home
+          </Link>
         </li>
         <li>
-          <Link href="/login">Login</Link>
+          <Link href="/login" className="link-item">
+            Login
+          </Link>
         </li>
         <li>
-          <Link href="/register">Register</Link>
+          <Link href="/register" className="link-item">
+            Register
+          </Link>
+        </li>
+        <li>
+          <Link href="/dashboard" className="link-item">
+            Dashboard
+          </Link>
         </li>
       </ul>
     </header>

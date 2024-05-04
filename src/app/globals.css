@@ -11,3 +11,7 @@ body {
   background-color: #1d1d1d;
   color: #eee;
 }
+
+.main-page {
+  padding: 50px 5%;
+}
