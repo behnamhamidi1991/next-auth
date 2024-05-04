@@ -11,9 +11,14 @@ export default function Register() {
     password: "",
     username: "",
   });
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="register">
-      <form className="register-form">
+      <form className="register-form" onSubmit={handleSubmit}>
         <h1>Register Form</h1>
         <input
           type="text"

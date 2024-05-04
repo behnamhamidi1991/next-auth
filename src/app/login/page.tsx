@@ -9,15 +9,26 @@ export default function LoginPage() {
   const [user, setUser] = React.useState({
     email: "",
     password: "",
-    username: "",
   });
 
   return (
     <div className="login">
       <form className="login-form">
         <h1>Login Form</h1>
-        <input type="email" placeholder="Email eg. john@email.com" />
-        <input type="password" placeholder="Enter your password" />
+        <input
+          type="email"
+          placeholder="Email e.g. john@email.com"
+          id="email"
+          value={user.email}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          id="password"
+          value={user.password}
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
+        />
         <button type="submit">Loign</button>
       </form>
     </div>
