@@ -12,3 +12,13 @@ header ul {
 .link-item {
   color: #fff;
 }
+
+.logoutBtn {
+  border: none;
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-weight: 700;
+  background-color: rgb(208, 61, 28);
+  color: #fff;
+  cursor: pointer;
+}

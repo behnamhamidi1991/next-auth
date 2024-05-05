@@ -26,6 +26,7 @@ const Header = () => {
             Dashboard
           </Link>
         </li>
+        <button className="logoutBtn">Logout</button>
       </ul>
     </header>
   );

@@ -23,6 +23,7 @@ export default function Register() {
       setLoading(true);
       const response = await axios.post("/api/users/register", user);
       console.log("Signup success", response.data);
+      toast.success("User successfully created!");
       router.push("/login");
     } catch (error: any) {
       toast.error(error);
