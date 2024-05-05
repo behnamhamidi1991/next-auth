@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       success: true,
     });
 
-    response.cookies.set("token", token, { httpOnly: true });
+    response.cookies.set("token", token, { httpOnly: false });
     return response;
     // CATCH THE ERROR
   } catch (error: any) {
