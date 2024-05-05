@@ -31,8 +31,11 @@ export default function LoginPage() {
     try {
       setLoading(true);
 
-      const response = await axios.post("/api/users/login", user);
+      const response = await axios.post("/api/users/login", user, {
+        withCredentials: true,
+      });
       toast.success("Login successfully :)");
+      console.log(response.data);
       router.push("/dashboard");
     } catch (error: any) {
       toast.error(error);
